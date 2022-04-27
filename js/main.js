@@ -36,7 +36,7 @@ window.addEventListener('load', function () {
 
 setTimeout(function () {
     $('#loading-text').html("字体及文件加载可能需要一定时间")
-}, 3000);
+}, 1000);
 
 //延迟加载音乐播放器
 function downloadJSAtOnload() {
@@ -51,18 +51,16 @@ else if (window.attachEvent)
 else window.onload = downloadJSAtOnload;
 
 //新春灯笼 （ 需要时取消注释 ）
-/*
-new_element=document.createElement("link");
-new_element.setAttribute("rel","stylesheet");
-new_element.setAttribute("type","text/css");
-new_element.setAttribute("href","./css/lantern.css");
-document.body.appendChild(new_element);
+// new_element = document.createElement("link");
+// new_element.setAttribute("rel", "stylesheet");
+// new_element.setAttribute("type", "text/css");
+// new_element.setAttribute("href", "./css/lantern.css");
+// document.body.appendChild(new_element);
 
-new_element=document.createElement("script");
-new_element.setAttribute("type","text/javascript");
-new_element.setAttribute("src","./js/lantern.js");
-document.body.appendChild(new_element);
-*/
+// new_element = document.createElement("script");
+// new_element.setAttribute("type", "text/javascript");
+// new_element.setAttribute("src", "./js/lantern.js");
+// document.body.appendChild(new_element);
 
 //火狐浏览器独立样式
 if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
@@ -93,7 +91,7 @@ fetch('https://v1.hitokoto.cn?max_length=24')
 //获取天气
 //每日限量 100 次
 //请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('https://www.yiketianqi.com/free/day?appid=43986679&appsecret=TksqGZT7&unescape=1')
+fetch('https://www.yiketianqi.com/free/day?appid=89412862&appsecret=f1T2iUlF&unescape=1')
     .then(response => response.json())
     .then(data => {
         $('#wea_text').html(data.wea)
@@ -171,7 +169,7 @@ $("#email").mouseover(function () {
     $("#link-text").html("通过这里联系我");
 });
 $("#telegram").mouseover(function () {
-    $("#link-text").html("你懂的 ~");
+    $("#link-text").html("看看我喜欢什么");
 }).mouseout(function () {
     $("#link-text").html("通过这里联系我");
 });
@@ -191,8 +189,8 @@ $('#switchmore').on('click', function () {
         $("#change1").html("哎呀，这都被你发现了（ 再点击一次可关闭 ）");
     } else {
         $('#container').attr('class', 'container');
-        $("#change").html("Hello&nbsp;World&nbsp;!");
-        $("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
+        $("#change").html("You need to learn to be humble&nbsp;!");
+        $("#change1").html("自嘲：本是后山人，偶坐前堂客；醉舞经阁半卷书，坐井说天阔。大志戏功名，海斗量福祸。论到囊中羞涩时，怒指乾坤错。");
     }
 });
 
@@ -228,28 +226,38 @@ $('#closemore').on('click', function () {
 
 //监听网页宽度
 window.addEventListener('load', function () {
+    width();
     window.addEventListener('resize', function () {
-        //关闭移动端样式
-        if (window.innerWidth >= 600) {
-            $('#row').attr('class', 'row');
-            $("#menu").html("<i class='iconfont icon-bars'>");
-            //移除移动端切换功能区
-            $('#rightone').attr('class', 'row rightone');
-        }
-
-        if (window.innerWidth <= 990) {
-            //移动端隐藏更多页面
-            $('#container').attr('class', 'container');
-            $("#change").html("Hello&nbsp;World&nbsp;!");
-            $("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
-
-            //移动端隐藏弹窗页面
-            $('#box').css("display", "none");
-            $('#row').css("display", "flex");
-            $('#more').css("display", "flex");
-        }
+        width();
     })
 })
+
+// 宽度
+function width() {
+    //关闭移动端样式
+    if (window.innerWidth >= 600) {
+        $('#row').attr('class', 'row');
+        $("#menu").html("<i class='iconfont icon-bars'>");
+        //移除移动端切换功能区
+        $('#rightone').attr('class', 'row rightone');
+        document.querySelector('.message').style.marginTop = '4.25rem'
+        document.querySelector('.main-left').style.marginBottom = '0'
+    }
+
+    if (window.innerWidth <= 990) {
+        //移动端隐藏更多页面
+        $('#container').attr('class', 'container');
+        $("#change").html("You need to learn to be humble&nbsp;!");
+        $("#change1").html("自嘲：本是后山人，偶坐前堂客；醉舞经阁半卷书，坐井说天阔。大志戏功名，海斗量福祸。论到囊中羞涩时，怒指乾坤错。");
+
+        //移动端隐藏弹窗页面
+        $('#box').css("display", "none");
+        $('#row').css("display", "flex");
+        $('#more').css("display", "flex");
+        document.querySelector('.message').style.marginTop = '0.25rem'
+        document.querySelector('.main-left').style.marginBottom = '5rem'
+    }
+}
 
 //移动端切换功能区
 var changemore = false;
@@ -315,14 +323,16 @@ color: rgb(244,167,89);
 var styleContent = `
 color: rgb(30,152,255);
 `
-var title1 = '無名の主页'
+var title1 = '  冷群王的小破站'
 var title2 = `
- _____ __  __  _______     ____     __
-|_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
-  | | | \\  / | (___  \\ \\_/ /  \\ \\_/ / 
-  | | | |\\/| |\\___ \\  \\   /    \\   /  
- _| |_| |  | |____) |  | |      | |   
-|_____|_|  |_|_____/   |_|      |_|                                                     
+
+##    ## #### ##    ##  ######   
+##   ##   ##  ###   ## ##    ##  
+##  ##    ##  ####  ## ##        
+#####     ##  ## ## ## ##   #### 
+##  ##    ##  ##  #### ##    ##  
+##   ##   ##  ##   ### ##    ##  
+##    ## #### ##    ##  ######                                                    
 `
 var content = `
 版 本 号：2.2

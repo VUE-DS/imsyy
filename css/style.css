@@ -17,7 +17,7 @@ p {
     transition: 0.3s;
     color: #efefef;
     user-select: none;
-    font-family: 'MiSans', sans-serif;
+    font-family: 'AliPuhui', sans-serif;
 }
 
 a:hover {
@@ -170,7 +170,7 @@ span.img-text {
     /*margin: 0.5rem;*/
     padding: 1rem;
     border-radius: 6px;
-    margin-top: 3.5rem;
+    margin-top: 4.25rem;
     max-width: 460px;
     cursor: pointer;
 }
@@ -709,7 +709,8 @@ i.iconfont.icon-github1 {
     border-color: #eeeeee !important;
 }
 
-.btn-check:focus+.btn, .btn:focus {
+.btn-check:focus+.btn,
+.btn:focus {
     box-shadow: none !important;
 }
 
@@ -933,7 +934,7 @@ footer {
 }
 
 .iziToast>.iziToast-close {
-    background: url(https://cdn.jsdelivr.net/gh/imsyy/file/pic/close.png) no-repeat 50% 50% !important;
+    background: url(https://cdn.lihad.com/Jsdelivr/aimg/close.png) no-repeat 50% 50% !important;
     background-size: 8px !important;
 }
 
@@ -947,4 +948,55 @@ footer {
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #eeeeee;
+}
+
+/* 哥哥提示 */
+.gege {
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.slides {
+    width: 100%;
+    margin: 0 30px;
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+/* 左边 */
+.slides .icon-right-copy {
+    display: none;
+    position: absolute;
+    bottom: -32px;
+    left: -30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 25%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+/* 右边 */
+.slides .icon-right {
+    display: none;
+    position: absolute;
+    bottom: -32px;
+    right: -30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 25%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.slides .icon-right-copy:hover,
+.slides .icon-right:hover {
+    background-color: hsla(0, 0%, 100%, 0.3);
 }
