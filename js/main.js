@@ -36,7 +36,7 @@ window.addEventListener('load', function () {
 
 setTimeout(function () {
     $('#loading-text').html("字体及文件加载可能需要一定时间")
-}, 1000);
+}, 100);
 
 //延迟加载音乐播放器
 function downloadJSAtOnload() {
