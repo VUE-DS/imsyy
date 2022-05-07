@@ -226,12 +226,24 @@ $('#closemore').on('click', function () {
 
 //监听网页宽度
 window.addEventListener('load', function () {
+    Copyright()
     width();
     window.addEventListener('resize', function () {
+        Copyright()
         width();
     })
 })
 
+// 显示版权
+function Copyright() {
+    if (window.innerWidth >= 550) {
+        $('#Copyspan').css("display", "contents");
+    }
+
+    if (window.innerWidth <= 500) {
+        $('#Copyspan').css("display", "none");
+    }
+}
 // 宽度
 function width() {
     //关闭移动端样式
